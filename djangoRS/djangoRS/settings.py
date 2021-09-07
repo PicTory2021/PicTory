@@ -12,16 +12,18 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import json
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+ROOT_DIR = os.path.dirname(BASE_DIR)
+SECRETS_PATH = os.path.join(ROOT_DIR, 'djangoRS/djangoRS/secrets.json')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&@86a=ls(97^%-o&@y)bwq!0_j%dp82lsza@if_=%fyl*ynogr'
+SECRET_KEY = json.loads(open(SECRETS_PATH).read())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

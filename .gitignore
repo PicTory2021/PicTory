@@ -9,6 +9,8 @@ media
 
 __pycache__
 djangoRS/appRS/__pycache__/
+djangoRS/appRS/migrations/
+djangoRS/djangoRS/secrets.json
 
 rsvenv/
 
